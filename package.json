@@ -1,0 +1,30 @@
+{
+  "name": "microlife-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-Cross/microlife-tracker.git"
+  },
+  "author": "Daniel Cross",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daniel-Cross/microlife-tracker/issues"
+  },
+  "homepage": "https://github.com/Daniel-Cross/microlife-tracker#readme",
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-mcr-codes": "^1.2.0",
+    "eslint-plugin-babel": "^5.2.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
+  }
+}
