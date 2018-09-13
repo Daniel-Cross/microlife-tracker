@@ -3,7 +3,7 @@ const path = require('path');
 const events = require('events');
 const httpMocks = require('node-mocks-http');
 
-const createActivity = require('../controllers/createActivity.js');
+const createActivity = require('../controllers/createActivity');
 
 jest.mock('uuid/v5', () => jest.fn(() => 'abc123'));
 
@@ -24,12 +24,11 @@ describe('create activity', () => {
       eventEmitter: events.EventEmitter
     });
 
-    createActivity(request, response);
     response.on('end', () => {
       const filePath = path.join(__dirname, '../controllers', 'user.json');
 
       fs.readFile(filePath, 'utf8', (error, userJson) => {
-        expect(response.statusCode.toEqual(200));
+        expect(response.statusCode).toEqual(200);
 
         const user = JSON.parse(userJson);
         const activity = Object.assign(request.body, { _id: 'abc123' });
@@ -40,6 +39,7 @@ describe('create activity', () => {
         done();
       });
     });
+    createActivity(request, response);
   });
   afterEach(() => {
     const filePath = path.join(__dirname, '../controllers', 'user.json');
