@@ -24,6 +24,8 @@ describe('create activity', () => {
       eventEmitter: events.EventEmitter
     });
 
+    createActivity(request, response);
+
     response.on('end', () => {
       const filePath = path.join(__dirname, '../controllers', 'user.json');
 
@@ -39,7 +41,6 @@ describe('create activity', () => {
         done();
       });
     });
-    createActivity(request, response);
   });
   afterEach(() => {
     const filePath = path.join(__dirname, '../controllers', 'user.json');
