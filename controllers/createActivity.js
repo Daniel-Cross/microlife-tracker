@@ -3,10 +3,15 @@ const path = require('path');
 const uuid = require('uuid/v5');
 
 const createActivity = (req, res) => {
+  const filePath = path.join(__dirname, 'user.json');
+
   fs.readFile(filePath, 'utf8', (readError, userJson) => {
     if (readError) throw readError;
+
     const user = JSON.parse(userJson);
+
     const activityId = uuid();
+
     const activity = Object.assign({}, req.body, { _id: activityId });
     user.profile.activities.push(activity);
 
