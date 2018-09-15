@@ -3,7 +3,7 @@ const path = require('path');
 const events = require('events');
 const httpMocks = require('node-mocks-http');
 
-const getActivities = require('../controllers/getActivity');
+const getActivities = require('../controllers/getActivities');
 
 describe('getActivities', () => {
   it('gets a list of the users activities', done => {
