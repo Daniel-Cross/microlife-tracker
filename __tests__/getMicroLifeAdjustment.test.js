@@ -5,7 +5,7 @@ const events = require('events');
 
 const getMicroLifeAdjustment = require('../controllers/getMicroLifeAdjustment');
 
-describe('getMicroLifeAdjusment', () => {
+describe('getMicroLifeAdjustment', () => {
   it('gets the users micro life adjustment for the day', done => {
     expect.assertions(2);
 
