@@ -8,8 +8,18 @@ const getActivities = (req, res) => {
     if (readError) throw readError;
 
     const user = JSON.parse(userJson);
+    const activities = user.profile.activities;
+    const profileActivityId = req.params.profileActivityId;
 
-    res.status(200).send(user.profile.activities);
+    if (profileActivityId) {
+      const profileActivity = activities.find(
+        activity => activity._id === profileActivityId
+      );
+
+      res.status(200).send(profileActivity);
+    }
+
+    res.status(200).send(activities);
   });
 };
 
